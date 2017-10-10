@@ -15,6 +15,10 @@ public class Wallet {
         mBalance += amount;
     }
 
+    public void withdraw(double amount) {
+        mBalance -= amount;
+    }
+
     public double getBalance() {
         return mBalance;
     }
