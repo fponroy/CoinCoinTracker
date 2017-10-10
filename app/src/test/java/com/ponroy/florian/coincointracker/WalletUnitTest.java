@@ -1,5 +1,7 @@
 package com.ponroy.florian.coincointracker;
 
+import com.ponroy.florian.coincointracker.model.Wallet;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -19,6 +21,6 @@ public class WalletUnitTest {
         wallet.deposit(10);
 
         // Check that the wallet actually contains the 10 EUR
-        assertEquals(10, wallet.getBalance());
+        assertEquals(10, wallet.getBalance(), 0.001);
     }
 }
