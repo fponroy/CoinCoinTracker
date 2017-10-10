@@ -13,6 +13,15 @@ import static org.junit.Assert.*;
  */
 public class WalletUnitTest {
     @Test
+    public void createWallet() throws Exception {
+        // Create a new Wallet instance, with 42 EUR in it
+        Wallet wallet = new Wallet(42);
+
+        // Check that the wallet actually contains 42 EUR
+        assertEquals(42, wallet.getBalance(), 0.001);
+    }
+
+    @Test
     public void depositMoney() throws Exception {
         // Create a new Wallet instance, with 0 EUR in it
         Wallet wallet = new Wallet(0);
