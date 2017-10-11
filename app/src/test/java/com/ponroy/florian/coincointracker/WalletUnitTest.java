@@ -44,4 +44,13 @@ public class WalletUnitTest {
         // Check that the wallet actually contains the 10 EUR
         assertEquals(20, wallet.getBalance(), 0.001);
     }
+
+    @Test(expected = Exception.class)
+    public void withdrawMoneyBelowThreshold() throws Exception {
+        // Create a new Wallet instance, with 10 EUR in it
+        Wallet wallet = new Wallet(10);
+
+        // Get more money than possible. Should throw an exception
+        wallet.withdraw(15);
+    }
 }

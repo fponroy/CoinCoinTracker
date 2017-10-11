@@ -15,7 +15,11 @@ public class Wallet {
         mBalance += amount;
     }
 
-    public void withdraw(double amount) {
+    public void withdraw(double amount) throws Exception {
+        if (amount > mBalance) {
+            throw new Exception("Not enough cash!");
+        }
+
         mBalance -= amount;
     }
 
