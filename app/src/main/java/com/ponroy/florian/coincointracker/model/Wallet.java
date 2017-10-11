@@ -6,12 +6,17 @@ package com.ponroy.florian.coincointracker.model;
 
 public class Wallet {
     private double mBalance;
+    private static final double CAPACITY = 30.0;
 
     public Wallet(double initialBalance) {
         mBalance = initialBalance;
     }
 
-    public void deposit(double amount) {
+    public void deposit(double amount) throws Exception {
+        if ((mBalance + amount) > CAPACITY) {
+            throw new Exception("Too many coins!");
+        }
+
         mBalance += amount;
     }
 

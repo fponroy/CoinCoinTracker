@@ -53,4 +53,13 @@ public class WalletUnitTest {
         // Get more money than possible. Should throw an exception
         wallet.withdraw(15);
     }
+
+    @Test(expected = Exception.class)
+    public void depositMoneyAboveCapacity() throws Exception {
+        // Create a new Wallet instance, with 10 EUR in it
+        Wallet wallet = new Wallet(10);
+
+        // Put more money than possible. Should throw an exception
+        wallet.deposit(25);
+    }
 }
