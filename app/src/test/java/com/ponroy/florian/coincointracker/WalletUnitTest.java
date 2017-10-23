@@ -1,10 +1,12 @@
 package com.ponroy.florian.coincointracker;
 
+import com.ponroy.florian.coincointracker.controller.AuthActivity;
 import com.ponroy.florian.coincointracker.model.Wallet;
 
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -61,5 +63,16 @@ public class WalletUnitTest {
 
         // Put more money than possible. Should throw an exception
         wallet.deposit(25);
+    }
+
+    @Test
+    public void testWalletContent() throws Exception {
+
+        AuthActivity authActivity = mock(AuthActivity.class);
+        when(authActivity.getUserToken()).thenReturn("FakeToken");
+
+        String token = authActivity.getUserToken();
+
+        // Test token
     }
 }
